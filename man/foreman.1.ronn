@@ -4,7 +4,7 @@ foreman(1) -- manage Procfile-based applications
 ## SYNOPSIS
 
 `foreman start [process]`<br>
-`foreman run <command>`<br>
+`foreman run [args] <command>`<br>
 `foreman export <format> [location]`
 
 ## DESCRIPTION
@@ -46,6 +46,20 @@ The following options control how the application is run:
 
 `foreman run` is used to run one-off commands using the same environment
 as your defined processes.
+
+The following options control how the application is run with `foreman run`:
+
+  * `-e`, `--env=ENV`:
+    Specify one or more .env files to load
+
+  * `-f`, `--procfile=PROCFILE`:
+    Specify an alternate Procfile to load, implies `-d` at the Procfile root.
+
+  * `-d`, `--root=ROOT`:
+    Specify the root directory of the Procfile.
+
+For example, `foreman run --procfile=Procfile.development web ` or `foreman run
+-f Procfile.development web` will run the web command of `Procfile.development`.
 
 ## EXPORTING
 

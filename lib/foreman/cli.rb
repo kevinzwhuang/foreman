@@ -72,7 +72,7 @@ class Foreman::CLI < Thor
     puts "valid procfile detected (#{engine.process_names.join(', ')})"
   end
 
-  desc "run COMMAND [ARGS...]", "Run a command using your application's environment"
+  desc "run [ARGS...] COMMAND", "Run a command using your application's environment"
 
   method_option :env, :type => :string, :aliases => "-e", :desc => "Specify an environment file to load, defaults to .env"
   stop_on_unknown_option! :run
